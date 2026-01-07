@@ -11,7 +11,7 @@
 #   - systemd 服务管理
 #
 #   使用方法：
-#   bash <(curl -sL https://raw.githubusercontent.com/YOUR_USERNAME/qbit-smart-web/main/install.sh)
+#   bash <(curl -sL https://raw.githubusercontent.com/YOUR_USERNAME/pt-qbit-web/main/install.sh)
 #
 #===============================================================================
 
