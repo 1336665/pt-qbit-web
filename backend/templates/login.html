@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录 - qBit Smart Web</title>
+  <link rel="stylesheet" href="/static/auth.css">
+</head>
+<body>
+  <div class="auth-shell">
+    <div class="auth-card">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <div>
+          <div class="auth-title">欢迎回来</div>
+          <div class="auth-subtitle">请输入账号密码进入管理面板</div>
+        </div>
+        <button class="theme-toggle" id="theme-toggle">🌙 暗色</button>
+      </div>
+
+      {% if error %}
+      <div class="auth-error" style="margin-top:16px;">{{ error }}</div>
+      {% endif %}
+
+      <form class="auth-form" method="post">
+        <div>
+          <div class="auth-label">用户名</div>
+          <input class="auth-input" type="text" name="username" placeholder="请输入用户名" required>
+        </div>
+        <div>
+          <div class="auth-label">密码</div>
+          <input class="auth-input" type="password" name="password" placeholder="请输入密码" required>
+        </div>
+        <div class="auth-actions">
+          <button class="auth-btn" type="submit">登录</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+    const applyTheme = (mode) => {
+      document.body.classList.toggle('theme-light', mode === 'light');
+      localStorage.setItem('ui-theme', mode);
+      const toggle = document.getElementById('theme-toggle');
+      if (toggle) toggle.textContent = mode === 'light' ? '🌞 浅色' : '🌙 暗色';
+    };
+    const saved = localStorage.getItem('ui-theme') || 'dark';
+    applyTheme(saved);
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      const next = document.body.classList.contains('theme-light') ? 'dark' : 'light';
+      applyTheme(next);
+    });
+  </script>
+</body>
+</html>

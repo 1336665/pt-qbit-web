@@ -1,0 +1,269 @@
+:root {
+  color-scheme: dark;
+  --bg: #0f1420;
+  --bg-soft: #171e2c;
+  --bg-card: #1d2434;
+  --border: rgba(163, 186, 255, 0.25);
+  --text: #f7f8ff;
+  --text-soft: #c7cfeb;
+  --text-muted: #9aa6c5;
+  --accent: #9db8ff;
+  --accent-2: #c4b5ff;
+  --danger: #ff9db5;
+  --success: #8bd3c7;
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.sidebar {
+  width: 240px;
+  background: var(--bg-soft);
+  border-right: 1px solid var(--border);
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.brand-title {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.brand-subtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.nav-button {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-soft);
+  padding: 10px 12px;
+  text-align: left;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.nav-button:hover,
+.nav-button.active {
+  background: rgba(157, 184, 255, 0.15);
+  border-color: rgba(157, 184, 255, 0.35);
+  color: var(--text);
+}
+
+.sidebar-footer {
+  margin-top: auto;
+}
+
+.main {
+  flex: 1;
+  padding: 24px 32px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.content {
+  min-height: 400px;
+}
+
+.status-message {
+  min-height: 24px;
+  margin-bottom: 16px;
+  color: var(--text-muted);
+}
+
+.status-message.success {
+  color: var(--success);
+}
+
+.status-message.error {
+  color: var(--danger);
+}
+
+.panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.panel-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.stat-card {
+  background: rgba(15, 20, 32, 0.6);
+  border: 1px solid rgba(157, 184, 255, 0.15);
+  border-radius: var(--radius);
+  padding: 12px;
+}
+
+.stat-label {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid rgba(157, 184, 255, 0.15);
+}
+
+.data-table th {
+  text-align: left;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.table-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.select {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 6px 10px;
+  border-radius: var(--radius);
+}
+
+.btn {
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  padding: 6px 12px;
+  cursor: pointer;
+  color: var(--text);
+  background: var(--accent);
+}
+
+.btn.ghost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text-soft);
+}
+
+.btn.danger {
+  background: var(--danger);
+  color: #1f1f1f;
+}
+
+.log-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.log-item {
+  display: grid;
+  grid-template-columns: 180px 80px 1fr;
+  gap: 12px;
+  padding: 8px;
+  border-radius: var(--radius);
+  background: rgba(15, 20, 32, 0.6);
+  border: 1px solid rgba(157, 184, 255, 0.12);
+  font-size: 12px;
+}
+
+.code-block {
+  background: rgba(15, 20, 32, 0.6);
+  border: 1px solid rgba(157, 184, 255, 0.2);
+  border-radius: var(--radius);
+  padding: 12px;
+  overflow-x: auto;
+}
+
+.loading {
+  color: var(--text-muted);
+  padding: 24px;
+}
+
+@media (max-width: 960px) {
+  .app-shell {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .nav {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .main {
+    padding: 16px;
+  }
+}
