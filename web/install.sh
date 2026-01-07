@@ -27,9 +27,9 @@ CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
 # 配置
-REPO_URL="${REPO_URL:-https://github.com/1336665/qbit-smart-web}"
-INSTALL_DIR="/opt/qbit-smart-web"
-SERVICE_NAME="qbit-smart"
+REPO_URL="${REPO_URL:-https://github.com/1336665/pt-qbit-web}"
+INSTALL_DIR="/opt/pt-qbit-web"
+SERVICE_NAME="qbit-pt"
 DEFAULT_PORT=5000
 VERSION="1.16.0"
 
